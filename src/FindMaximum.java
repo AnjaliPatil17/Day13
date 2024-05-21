@@ -1,6 +1,6 @@
 public class FindMaximum {
-    public static void max(int a,int b,int c){
-        System.out.println("The Integer Numbers are: "+a+","+b+","+c);
+    public static void max(float a,float b,float c){
+        System.out.println("The Float Numbers are: "+a+","+b+","+c);
         if(a > b && a > c){
             System.out.println("Maximum number is: "+ a);
         }else if (b > a && b > c) {
@@ -10,9 +10,11 @@ public class FindMaximum {
         }
     }
     public static void main(String[] args) {
-        int a=5;
-        int b=8;
-        int c=9;
+        float a=5.0f;
+        float b=8.0f;
+        float c=3.0f;
         max(a,b,c);
     }
 }
+
+
