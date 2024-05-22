@@ -1,18 +1,18 @@
 public class FindMaximum {
-    public static void max(float a,float b,float c){
-        System.out.println("The Float Numbers are: "+a+","+b+","+c);
-        if(a > b && a > c){
-            System.out.println("Maximum number is: "+ a);
-        }else if (b > a && b > c) {
-            System.out.println("Maximum number is: "+ b);
+    public static void max(String a,String b,String c){
+        System.out.println("The Strings  are: "+a+","+b+","+c);
+        if(a.length() > b.length()  && a.length() > c.length()){
+            System.out.println("Maximum String is: "+ a);
+        }else if (b.length() > a.length()&& b.length() > c.length()) {
+            System.out.println("Maximum String is: "+ b);
         }else {
-            System.out.println("Maximum number is: "+ c);
+            System.out.println("Maximum String is: "+ c);
         }
     }
     public static void main(String[] args) {
-        float a=5.0f;
-        float b=8.0f;
-        float c=3.0f;
+        String a="Apple";
+        String b="banana";
+        String c="kiwi";
         max(a,b,c);
     }
 }
