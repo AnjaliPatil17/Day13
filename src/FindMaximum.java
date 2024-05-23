@@ -1,18 +1,43 @@
-public class FindMaximum {
-    public static <T extends Comparable<T>> T findMax(T a, T b,T c) {
-     T max=a;
-     if(b.compareTo(max)>0){
-         max=b;
-     }if(c.compareTo(max)>0){
-            max=c;
+
+    public class FindMaximum<T extends Comparable<T>> {
+        private T var1;
+        private T var2;
+        private T var3;
+
+        // Parameterized constructor
+        public FindMaximum(T var1, T var2, T var3) {
+            this.var1 = var1;
+            this.var2 = var2;
+            this.var3 = var3;
         }
-     return max;
-    }
 
-    public static void main(String[] args) {
+        // Method to find the maximum among the three variables
+        public T testMaximum() {
+            return FindMaximum.testMaximum(var1, var2, var3);
+        }
 
-        System.out.println("Maximum in Integer array: " + findMax(4,6,9));
-        System.out.println("Maximum in Float array: " + findMax(2.5f,5.6f,4.9f));
-        System.out.println("Maximum in String array: " + findMax("apple","orange","lichi"));
+        // Static method to find the maximum among three values
+        public static <T extends Comparable<T>> T testMaximum(T var1, T var2, T var3) {
+            T max = var1;
+            if (var2.compareTo(max) > 0) {
+                max = var2;
+            }
+            if (var3.compareTo(max) > 0) {
+                max = var3;
+            }
+            return max;
+        }
+
+        // New test case to use the Generic Clas
+        public static void main(String[] args) {
+
+            FindMaximum<Integer> intMaxFinder = new FindMaximum<>(3, 5, 1);
+            System.out.println("Maximum Integer: " + intMaxFinder.testMaximum());
+
+            FindMaximum<Float> floatMaxFinder = new FindMaximum<>(6.6f, 8.8f, 7.7f);
+            System.out.println("Maximum Float: " + floatMaxFinder.testMaximum());
+
+            FindMaximum<String> stringMaxFinder = new FindMaximum<>("apple", "banana", "cherry");
+            System.out.println("Maximum String: " + stringMaxFinder.testMaximum());
+        }
     }
-}
